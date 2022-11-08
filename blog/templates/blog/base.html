@@ -1,0 +1,86 @@
+<!-- blog/templates/blog/base.html -->
+{% load static %} <link rel="stylesheet" href="{% static "blog/base.css" %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mitchell's Site – {% block page_title %}An okay blog{% endblock %}</title>
+  <link href="//fonts.googleapis.com/css?family=Caveat&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  {% if messages %}
+  <div class="django-messages">
+    {% for message in messages %}
+    <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <!-- The header -->
+  <header id="site-header">
+     <h1><img src="{% static "blog/jason.png" %}" alt="Logo" id="logo">Mitchell's Blog</h1>
+     <p>Your daily dose of great stuff!</p>
+     <!-- Top navigation -->
+     <nav id="top-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{% url "about" %}">About</a></li>
+        <li><a href="{% url "post-list" %}">Posts</a></li>
+        <li><a href="{% url "topic-list" %}">Topics</a></li>
+        <li><a href="{% url "photo-contest" %}">Photo Contest</a></li>
+        <li><a href="{% url "contact-form" %}">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="alt-body">
+  <main id="main-content">
+
+  <div>
+   {% block main %}
+   <!-- Content for the main block will be rendered here -->
+   {% endblock %}
+  </div>
+  <div id="sidebars">
+    <aside id="sidebar">
+      <section>
+        <div class="box-header">
+        <h3>Top Topics</h3>
+        </div>
+        <ul>
+          {% for topic in top_topics %}
+            <li><a href="{{ topic.get_absolute_url }}">{{ topic.name }}</a> ({{ topic.post_count }})</li>
+          {% endfor %}
+        <br/>
+        <a href="{% url "topic-list" %}">View All</a>
+        </ul>
+      </section>
+    </aside>
+         <br />
+     <aside id="sidebar">
+       <section id="author-list">
+         <div class="box-header">
+         <h3>Authors</h3>
+         </div>
+         <ul>
+           {% for author in authors %}
+             <li>{{ author.first_name }}</li>
+           {% endfor %}
+         </ul>
+       </section>
+     </aside>
+
+
+   </div>
+  </main>
+
+  <!-- The footer -->
+  <footer id="site-footer">
+    <!-- Print copyright with the current year -->
+    Copyright &copy; 1986 - {% now 'Y' %} by Mitchell Burr Inc.
+    All Rights Reserved
+    <br/>
+    <a href="{% url "terms-and-conditions" %}">Terms & Conditions</a>
+  </footer>
+</div> <!-- End alt-body div -->
+</body>
+</html>

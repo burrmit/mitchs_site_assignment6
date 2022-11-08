@@ -1,0 +1,275 @@
+/* blog/static/blog/base.css */
+
+/* main css */
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0rem;
+  margin: 0 auto;
+}
+
+a {
+  color: #0163D1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background: #E1E8EF;
+  height: auto;
+  padding-bottom: 15px;
+  box-shadow: 0 16px 48px #E1E8EF;
+  padding-top: 20px;
+}
+
+/* base.html css */
+#alt-body {
+  display: grid;
+  font-family: Helvetica;
+  grid-template-rows: auto auto 1fr auto;
+  margin: 0 auto;
+  min-height: 100%;
+  padding: 0rem;
+  max-width: 1000px;
+}
+
+#logo {
+  width:50px;
+  height:50px;
+}
+
+#site-header {
+  font-family: monospace;
+}
+
+#site-header h1 {
+  font-family: 'Caveat';
+  font-size: 50px;
+  padding: 0;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 60px auto;
+  max-width: 1000px;
+}
+
+#site-header p {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+#top-nav {
+  font-size: 18px;
+  padding: 0.5rem 0;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+#top-nav ul {
+  padding: 0;
+}
+
+#top-nav li {
+  margin-top: 1rem;
+  list-style-type: none;
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+#top-nav a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#main-content {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: auto 200px;
+}
+
+.box-header {
+  padding: 0.5px 11px;
+  background-color: #F8F8F8;
+  border-bottom: 0.5px solid #E1E8EF;
+}
+
+.post-preview {
+  border: 0.5px solid #E1E1E1;
+  box-shadow: 0 16px 48px #E1E8EF;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  margin-right: 20px;
+}
+
+.post-preview time {
+  font-style: italic;
+  font-size: 12px;
+  color: grey;
+  margin: 20px;
+}
+
+.post-preview section {
+  margin: 20px;
+}
+
+/* Post detail article */
+#post-detail-article h1 {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#post-detail-article .author {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+}
+
+#post-detail-article .published {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+#post-detail-article .content {
+  margin: 2rem 0;
+}
+
+#sidebars {
+  display: grid;
+  grid-template-rows: auto auto;
+  max-height: 400px;
+}
+
+#sidebar {
+  border: 0.5px solid #E1E1E1;
+  box-shadow: 0 16px 48px #E1E8EF;
+  max-height: 250px;
+}
+
+#site-footer {
+  text-align: center;
+  max-height: 50;
+  padding: 10;
+  font-size: 0.9rem;
+}
+
+#topics-list {
+  padding: 0;
+  margin: 0;
+}
+
+#topics-list li {
+  padding: 0;
+  margin-left: 30px;
+}
+
+.btn-primary {
+  background-color: #D6D6D6;
+  font-size: 12px;
+  font-family: Helvetica;
+  color: black;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0163D1;
+  color: white;
+}
+
+/* contact.html css */
+.container {
+  border-radius: 5px;
+  padding-right: 100px;
+}
+
+input[type=text], input[type=email], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 6px 10px 10px 0px;
+  resize: none;
+}
+
+input[type=submit] {
+  background-color: #D6D6D6;
+  color: black;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #0163D1;
+  color: white;
+}
+
+form .errorlist {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: red;
+  padding: 0 0 0 1.5em;
+  margin: 0;
+}
+
+/* about.html css */
+#photo_me {
+  width:150px;
+  height:150px;
+  float: left;
+  padding-right: 20px;
+}
+
+#photo_context_bar {
+  width: 100%;
+  padding: 0px 10px 100px 0px;
+}
+
+.photo_contest_img {
+  height:98px;
+  float: left;
+  padding-right: 10px;
+}
+
+#about_me {
+  font-size: 16px;
+  padding-right: 20px;
+}
+
+#content {
+  padding-right: 20px;
+}
+
+/* Messages */
+.django-messages {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0;
+  list-style: none;
+}
+
+.django-messages div {
+  padding: 1rem;
+}
+
+.django-messages .success {
+  background: #bdfcb3;
+  color: #355430;
+}
+
+.form-table {
+  font-family: Helvetica;
+  font-size: 14px;
+  text-align:left;
+}

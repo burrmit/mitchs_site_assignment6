@@ -1,0 +1,23 @@
+<!-- blog/templates/blog/post_detail.html -->
+
+{% extends "blog/base.html" %}
+{% block page_title %}{{ post.title }}{% endblock %}
+{% block main %}
+<article id="post-detail-article">
+  <h1>{{ post.title }}</h1>
+   <span class="published"><time>Published {{ post.published|timesince }} ago</time></span><br/>
+   <span class="author">by {{ post.author.get_full_name }}</span>
+   <br/>
+   {% for topics in post.topics.all %}
+      {%spaceless%}
+      <span class="topic-link"><a href="{{ topics.get_absolute_url }}">{{ topics.name }}</a>{%if not forloop.last%},{%endif%}</span>
+      {%endspaceless%}
+   {% endfor %}
+   {% if post.banner %}
+    <br /><br />
+    <img src="{{ post.banner.url }}" width="90%" alt="Banner image">
+   {% endif %}
+   <section class="content">{{ post.content|safe|linebreaks }}</section>
+
+</article>
+{% endblock %}

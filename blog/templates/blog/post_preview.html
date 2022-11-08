@@ -1,0 +1,14 @@
+<article class="post-preview">
+ <div class="box-header">
+ <h3>{{ post.title }}</h3>
+ </div>
+  <br/>
+  <time>| {{ post.published|timesince }} ago</time>
+  <br/>
+  <section class="teaser">
+    {{ post.content|striptags|truncatewords:20 }}
+    <br/><br/>
+    <p><a href="{{ post.get_absolute_url }}" class="btn-primary">Read More &rarr;</a></p>
+  </section>
+ </article>
+<br/>

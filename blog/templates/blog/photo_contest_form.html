@@ -1,0 +1,28 @@
+{# blog/templates/blog/photo_contest_form.html #}
+{% extends "blog/base.html" %}
+{% block page_title %}Photo Contest{% endblock %}
+{% block main %}
+{% load static %}
+<h1>Photo Contest Entry Form</h1>
+<div id="photo_context_bar">
+<img src='{% static "blog/photo_contest_page/photo1.jpg" %}' alt="Cat" class="photo_contest_img">
+<img src='{% static "blog/photo_contest_page/photo2.jpg" %}' alt="Concert" class="photo_contest_img">
+<img src='{% static "blog/photo_contest_page/photo3.jpg" %}' alt="Road" class="photo_contest_img">
+<img src='{% static "blog/photo_contest_page/photo4.jpg" %}' alt="Spider" class="photo_contest_img">
+<img src='{% static "blog/photo_contest_page/photo5.jpg" %}' alt="Subway" class="photo_contest_img">
+</div>
+<p>Come one, come all, to the greatest photo contest of the 21st century!</p>
+<p>Use the form provided below to enter your information along with a photo that you have taken
+  yourself in order to enter.</p>
+<p>From the entries received we will review all the wonder photos and pick the one that
+  displays, to us, authenticity, uniqueness, skillness, braveryness, all the things that
+  we have come to love and enjoy with photo contests.</p>
+<form method="post" enctype="multipart/form-data" novalidate>
+  {% csrf_token %}
+  <table class="form-table">
+    {{ form.as_table }}
+  </table>
+  <br />
+  <button type="submit" class="btn-primary">Submit</button>
+</form>
+{% endblock %}
