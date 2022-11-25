@@ -1,6 +1,7 @@
 # blog/forms.py
 
 from django import forms
+from . import models
 
 class NameForm(forms.Form):
     first_name = forms.CharField(label='First name', max_length=50)
@@ -30,3 +31,19 @@ class PhotoContestForm(forms.Form):
     last_name = forms.CharField(label='Last name', max_length=50)
     email = forms.EmailField()
     photo = forms.ImageField()
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = models.Comment
+        fields = [
+            'post',
+            'name',
+            'email',
+            'text',
+        ]
+        labels = {
+            'text': 'Comment'
+        }
+        widgets = {
+            'post': forms.HiddenInput()
+        }

@@ -77,3 +77,25 @@ class PhotoContestAdmin(admin.ModelAdmin):
         'photo',
         'submitted'
     )
+
+@admin.register(models.Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = (
+        'post',
+        'name',
+        'email',
+        'created'
+    )
+    list_filter = (
+        'post',
+        'name',
+        'email',
+        'created'
+    )
+
+    search_fields = (
+        'post',
+        'name',
+        'email',
+        'text'
+    )

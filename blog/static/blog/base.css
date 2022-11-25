@@ -273,3 +273,15 @@ form .errorlist {
   font-size: 14px;
   text-align:left;
 }
+
+/* Comments */
+.comments {
+  border-top: 1px solid #eee;
+  font-size: 0.8rem;
+  margin-top: 5rem;
+}
+
+.comments .by-line {
+  color: #666;
+  font-weight: 600;
+}
