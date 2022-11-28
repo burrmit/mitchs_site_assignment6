@@ -30,6 +30,9 @@ DEBUG = int(os.environ.get('DEBUG', '1'))
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://mitchs-site-assignment6.fly.dev',
+    ]
 
 # Application definition
 
